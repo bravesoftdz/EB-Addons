@@ -1,0 +1,12 @@
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\Ronin KhaZix.exe.config
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\Ronin KhaZix.exe
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\Ronin KhaZix.pdb
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\EloBuddy.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\EloBuddy.Sandbox.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\EloBuddy.SDK.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\Newtonsoft.Json.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\SharpDX.Direct3D9.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\SharpDX.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\obj\Debug\Ronin KhaZix.csprojResolveAssemblyReference.cache
+D:\Tommi\Documents\My\Deve\Kha'Zix\obj\Debug\Ronin KhaZix.exe
+D:\Tommi\Documents\My\Deve\Kha'Zix\obj\Debug\Ronin KhaZix.pdb

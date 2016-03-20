@@ -1,0 +1,11 @@
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Release\Ronin KhaZix.exe.config
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Release\Ronin KhaZix.exe
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Release\Ronin KhaZix.pdb
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Release\EloBuddy.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Release\EloBuddy.Sandbox.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Release\EloBuddy.SDK.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Release\Newtonsoft.Json.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Release\SharpDX.Direct3D9.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Release\SharpDX.dll
+D:\Tommi\Documents\My\Deve\Kha'Zix\obj\Release\Ronin KhaZix.exe
+D:\Tommi\Documents\My\Deve\Kha'Zix\obj\Release\Ronin KhaZix.pdb

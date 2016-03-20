@@ -1,0 +1,4 @@
+D:\Tommi\Documents\My\OKTW-EB-master\OKTW-EB-master\Kha'Zix\bin\Debug\KhaZix.exe.config
+D:\Tommi\Documents\My\Deve\OKTW-EB-master\OKTW-EB-master\Kha'Zix\bin\Debug\KhaZix.exe.config
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\KhaZix.exe.config
+D:\Tommi\Documents\My\Deve\Kha'Zix\bin\Debug\Ronin KhaZix.exe.config
