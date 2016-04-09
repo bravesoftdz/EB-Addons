@@ -1,0 +1,12 @@
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\bin\Release\Mario`s Lib.dll
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\bin\Release\Mario`s Lib.pdb
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\bin\Release\EloBuddy.dll
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\bin\Release\EloBuddy.Sandbox.dll
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\bin\Release\EloBuddy.SDK.dll
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\bin\Release\Newtonsoft.Json.dll
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\bin\Release\SharpDX.Direct3D9.dll
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\bin\Release\SharpDX.dll
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\bin\Release\SharpDX.XInput.dll
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\obj\Release\Mario`s Lib.csprojResolveAssemblyReference.cache
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\obj\Release\Mario`s Lib.dll
+D:\Tommi\Documents\My\Deve\ItsMeMario-master\ItsMeMario-master\Mario`s Lib\Mario`s Lib\obj\Release\Mario`s Lib.pdb
