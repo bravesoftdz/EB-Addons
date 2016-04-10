@@ -14,7 +14,7 @@ namespace RoninTune
     {
         public const string ComboMenuID = "combomenuid";
         public const string HarassMenuID = "harassmenuid";
-        //public const string AutoHarassMenuID = "autoharassmenuid";
+        public const string AutoHarassMenuID = "autoharassmenuid";
         public const string LaneClearMenuID = "laneclearmenuid";
         public const string LastHitMenuID = "lasthitmenuid";
         public const string JungleClearMenuID = "jungleclearmenuid";
@@ -68,7 +68,7 @@ namespace RoninTune
             FirstMenu = MainMenu.AddMenu("Ronin " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "hue");
             ComboMenu = FirstMenu.AddSubMenu("♠ Combo", ComboMenuID);
             HarassMenu = FirstMenu.AddSubMenu("♠ Harass", HarassMenuID);
-            //AutoHarassMenu = FirstMenu.AddSubMenu("• AutoHarass", AutoHarassMenuID);
+            AutoHarassMenu = FirstMenu.AddSubMenu("♠ AutoHarass", AutoHarassMenuID);
             LaneClearMenu = FirstMenu.AddSubMenu("♠ LaneClear", LaneClearMenuID);
             //LasthitMenu = FirstMenu.AddSubMenu("♠ LastHit", LastHitMenuID);
             JungleClearMenu = FirstMenu.AddSubMenu("♠ JungleClear", JungleClearMenuID);
@@ -110,6 +110,15 @@ namespace RoninTune
             HarassMenu.CreateSlider("Mana must be higher than [{0}%] to use Harass spells", "manaSlider", 30);
             HarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             HarassMenu.AddSeparator();
+
+            AutoHarassMenu.AddGroupLabel("AutoHarass");
+            AutoHarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            AutoHarassMenu.CreateCheckBox(" - Use Q", "qUse");
+            AutoHarassMenu.CreateCheckBox(" - Use E", "eUse");
+            AutoHarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            AutoHarassMenu.AddGroupLabel("Settings");
+            AutoHarassMenu.CreateKeyBind("Enable/Disable AutoHarass", "autoHarassKey", 'Z', 'U');
+            AutoHarassMenu.CreateSlider("Mana must be lower than [{0}%] to use AutoHarass spells", "manaSlider", 80);
 
             LaneClearMenu.AddGroupLabel("LaneClear");
             LaneClearMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
