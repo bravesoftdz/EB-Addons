@@ -54,7 +54,7 @@ namespace RoninTune.Modes
                 JungleClear.Execute();
             }
 
-            if (orbMode.HasFlag(Orbwalker.ActiveModes.JungleClear) && playerMana > JungleClearMenu.GetSliderValue("manaSlider"))
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Flee))
             {
                 Flee.Execute();
             }
