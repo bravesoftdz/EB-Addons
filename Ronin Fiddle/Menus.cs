@@ -122,7 +122,7 @@ namespace RoninFiddle
             }
             MiscMenu.AddGroupLabel("Settings for GapCloser/Interrupter");
             MiscMenu.CreateCheckBox("Use Terrify (Q Spell) For Interrupt", "interrupt.Q");
-            MiscMenu.CreateCheckBox("gapcloser.QUse Terrify (Q Spell) For Anti-Gap", "gapcloser.Q");
+            MiscMenu.CreateCheckBox("Use Terrify (Q Spell) For Anti-Gap", "gapcloser.Q");
             MiscMenu.CreateCheckBox("Use Terrify (E Spell) For Anti-Gap", "gapcloser.E");
             MiscMenu.AddSeparator();
 
