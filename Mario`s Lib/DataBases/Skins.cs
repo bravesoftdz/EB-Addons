@@ -46,7 +46,7 @@ namespace Mario_s_Lib.DataBases
             new Skin(Champion.Elise, new List<string> {"Basic Skin",}),
             new Skin(Champion.Evelynn, new List<string> {"Basic Skin",}),
             new Skin(Champion.Ezreal, new List<string> {"Basic Skin",}),
-            new Skin(Champion.FiddleSticks, new List<string> {"Basic Skin",}),
+            new Skin(Champion.FiddleSticks, new List<string> {"Basic Skin", "Bandito Fiddlesticks", "Dark Candy Fiddlesticks", "Fiddle Me Timbers", "Pumpkinhead Fiddlesticks", "Risen Fiddlesticks", "Spectral Fiddlesticks", "Surprise Party Fiddlesticks", "Union Jack Fiddlesticks",}),
             new Skin(Champion.Fiora, new List<string> {"Basic Skin",}),
             new Skin(Champion.Fizz, new List<string> {"Basic Skin",}),
             new Skin(Champion.Galio, new List<string> {"Basic Skin",}),
