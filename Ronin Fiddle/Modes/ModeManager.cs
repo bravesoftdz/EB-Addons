@@ -48,6 +48,11 @@ namespace RoninFiddle.Modes
                 LastHit.Execute();
             }
 
+            if (orbMode.HasFlag(Orbwalker.ActiveModes.Flee))
+            {
+                Flee.Execute();
+            }
+
             if (orbMode.HasFlag(Orbwalker.ActiveModes.LaneClear) && playerMana > LaneClearMenu.GetSliderValue("manaSlider"))
             {
                 LaneClear.Execute();

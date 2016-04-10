@@ -20,11 +20,15 @@ using static RoninFiddle.SpellsManager;
 
 //using Settings = RoninTune.Modes.Flee
 
-namespace RoninTune.Modes
+namespace RoninFiddle.Modes
 {
+    /// <summary>
+    /// This mode will run when the key of the orbwalker is pressed
+
     internal class Flee
     {
         public static readonly AIHeroClient Player = ObjectManager.Player;
+
         public static void Execute()
         {
             var target = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
