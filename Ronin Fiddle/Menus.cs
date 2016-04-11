@@ -62,6 +62,11 @@ namespace RoninFiddle
             ComboMenu.CreateCheckBox(" - Use E", "eUse");
             ComboMenu.CreateCheckBox(" - Use R", "rUse");
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            ComboMenu.AddGroupLabel("Spell Settings");
+            ComboMenu.AddLabel("It dont use W correctly when you disable this: (Pref Disable W then)");
+            ComboMenu.CreateCheckBox("Disable Stop Attacking while using W", "stopatt");
+            ComboMenu.CreateCheckBox("Disable Stop Moving while using W", "stoppmov");
+
 
             HarassMenu.AddGroupLabel("xHarassx");
             HarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");

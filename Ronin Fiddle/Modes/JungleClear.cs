@@ -37,10 +37,15 @@ namespace RoninFiddle.Modes
 
             if (W.IsReady() && JungleClearMenu.GetCheckBoxValue("wUse") && source.Distance(Player) <= W.Range)
             {
+              foreach (var Mob in EntityManager.MinionsAndMonsters.Monsters.Where(x => x.IsValid && !x.IsDead))
+                {
                 W.Cast(source);
                 Orbwalker.DisableAttacking = true;
                 Orbwalker.DisableMovement = true;
+                Healing = true;
             }
+            }
+
 
             if (E.IsReady() && JungleClearMenu.GetCheckBoxValue("eUse") && source.Distance(Player) <= E.Range)
             {

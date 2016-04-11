@@ -74,7 +74,19 @@ namespace RoninFiddle.Modes
                     if (usew)
                     {
                         W.Cast(wenemies);
+                        
+                    }
+                    var usedaw = ComboMenu.GetCheckBoxValue("stopatt");
+                    if (usedaw)
+                    {
                         Orbwalker.DisableAttacking = true;
+                        
+                    }
+                    var usedmw = ComboMenu.GetCheckBoxValue("stopmov");
+                    if (usedmw)
+                    {
+                        Orbwalker.DisableMovement = true;
+                        
                     }
                 }
 

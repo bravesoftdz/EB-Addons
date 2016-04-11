@@ -37,7 +37,7 @@ namespace RoninFiddle
             W = new Spell.Targeted(SpellSlot.W, 575);
             E = new Spell.Targeted(SpellSlot.E, 750);
             E1 = new Spell.Skillshot(SpellSlot.E, 1050, SkillShotType.Linear);
-            R = new Spell.Skillshot(SpellSlot.R, 880, SkillShotType.Circular);
+            R = new Spell.Skillshot(SpellSlot.R, 800, SkillShotType.Circular);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
@@ -155,6 +155,16 @@ namespace RoninFiddle
                 Q.Cast(sender);
             }
         }
+
+        //private static void Obj_AI_Base_OnProcessSpellCast(Obj_AI_Base sender, GameObjectProcessSpellCastEventArgs args)
+        //{
+        //    if (sender.IsMe && args.SData.Name == "Drain")
+        //    {
+        //        Orbwalker.DisableAttacking = true;
+        //        Orbwalker.DisableMovement = true;
+        //        Healing = true;
+        //    }
+        //}
 
         //END OF THE THANKS
 
