@@ -51,6 +51,8 @@ namespace RoninFiddle.Modes
             if (W.IsReady() && LaneClearMenu.GetCheckBoxValue("wUse"))
             {
                 W.Cast(source);
+                Orbwalker.DisableAttacking = true;
+                Orbwalker.DisableMovement = true;
             }
         }
     }
