@@ -42,7 +42,7 @@ namespace RoninTune.Modes
                 (a => a.HealthPercent).Where(a => !a.IsMe && a.IsValidTarget() && a.Distance(Player) <= E.Range);
             var target = TargetSelector.GetTarget(1900, DamageType.Magical);
 
-           if (ComboMenu.GetCheckBoxValue("nOne"))
+           if (ComboMenu.GetCheckBoxValue("cOne"))
             {
 
                 if (R.IsReady() && target.IsValidTarget(R.Range) && ComboMenu.GetCheckBoxValue("rUse"))
@@ -115,7 +115,40 @@ namespace RoninTune.Modes
                 }
             }
 
+           else if (ComboMenu.GetCheckBoxValue("cThree"))
+            {
 
+                if (R.IsReady() && target.IsValidTarget(R.Range) && ComboMenu.GetCheckBoxValue("rUse"))
+                    foreach (var ultenemies in enemiesr)
+                    {
+
+                        R.Cast();
+                        R1.Cast(ultenemies);
+                    }
+
+                if (Q.IsReady() && target.IsValidTarget(Q.Range) && ComboMenu.GetCheckBoxValue("qUse"))
+                {
+                    foreach (var qenemies in enemiesq)
+                    {
+                        var predQ = Q.GetPrediction(qenemies);
+
+                        {
+                            Q.Cast(predQ.CastPosition);
+                        }
+
+                        if (E.IsReady() && ComboMenu.GetCheckBoxValue("eUse"))
+                    foreach (var eenemies in enemies)
+
+                    {
+                        E.Cast(eenemies);
+                    }
+
+
+            
+                    }
+                }
+
+            }
 
 
 

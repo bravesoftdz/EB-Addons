@@ -85,12 +85,16 @@ namespace RoninTune
             ///ComboMenu.CreateComboBox("Choose your Logic", "Logics", new List<string> { "Normal", "Normal 2", "Gank" });
             //ComboMenu.Add("ComboLogics", new ComboBox("Choose your Logics", 0, "1 - [ComboOne]", "2 - [ComboTwo]", "3 - [GankCombo]"));
             ComboMenu.AddLabel("ComboLogics");
-            ComboMenu.CreateCheckBox("Normal", "nOne", false);
+            ComboMenu.CreateCheckBox("Normal", "cOne", false);
             ComboMenu.AddGroupLabel("Combo R - W - E - Q");
             ComboMenu.AddSeparator(15);
             ComboMenu.CreateCheckBox("Combo Two", "cTwo", true);
             ComboMenu.AddGroupLabel("Combo R - E - W - Q");
             ComboMenu.AddSeparator(15);
+            ComboMenu.CreateCheckBox("Combo Three", "cThree", false);
+            ComboMenu.AddGroupLabel("Combo R - Q - E");
+            ComboMenu.AddSeparator(15);
+            ComboMenu.AddGroupLabel("W Logic coming soon!");
             //ComboMenu.CreateCheckBox("Gank Combo", "gThree");
             //ComboMenu.AddSeparator(15);
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
