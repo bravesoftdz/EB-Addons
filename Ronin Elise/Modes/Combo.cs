@@ -25,8 +25,6 @@ namespace RoninElise.Modes
         {
             var target = TargetSelector.GetTarget(1100, DamageType.Magical);
             // SPIDER COMBO
-      if (ComboMenu.GetCheckBoxValue("1Combo"))
-            { 
             if (SpellsManager.IsSpider)
             {
                 if (ComboMenu.GetCheckBoxValue("q2Use") && Q2.IsReady() && target.IsValidTarget(SpellsManager.Q2.Range))
@@ -65,9 +63,9 @@ namespace RoninElise.Modes
                     R.Cast();
                 }
                 }
-            }
 
-            if (ComboMenu.GetCheckBoxValue("2Combo"))
+
+            if(ComboMenu["gankc"].Cast<KeyBind>().CurrentValue)
             {
                 if (ComboMenu.GetCheckBoxValue("eUse") && E.IsReady() && target.IsValidTarget(SpellsManager.E.Range) && E.GetPrediction(target).HitChance >= HitChance.Medium)
                 {

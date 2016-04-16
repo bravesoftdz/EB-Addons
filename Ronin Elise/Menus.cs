@@ -51,11 +51,9 @@ namespace RoninElise
             DrawingsMenu = FirstMenu.AddSubMenu("• Drawings", DrawingsMenuID);
 
             ComboMenu.AddGroupLabel("Combo");
-            ComboMenu.AddLabel("ONLY CHECK ONE COMBO");
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
-            ComboMenu.CreateCheckBox("Combo Fights", "1Combo");
-            ComboMenu.AddSeparator(10);
-            ComboMenu.CreateCheckBox("Gank Combo", "2Combo", false);
+            ComboMenu.Add("gankc", new KeyBind("Gank Combo", false, KeyBind.BindTypes.HoldActive, 'T'));
+            //Menu.Add("flashq", new KeyBind("FlashQ - Select Target (Hold)", false, KeyBind.BindTypes.HoldActive, 'T'));
             ComboMenu.AddSeparator(10);
             ComboMenu.AddLabel("Human Settings");
             ComboMenu.CreateCheckBox(" - Use Q", "qUse");
@@ -114,7 +112,7 @@ namespace RoninElise
             //KillStealMenu.CreateSlider("Mana must be higher than [{0}%] to use Killsteal spells", "manaSlider", 30);
             //KillStealMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
 
-            MiscMenu.CreateCheckBox("- Use Q Anti Gapcloser BETA", "eGap");
+            MiscMenu.CreateCheckBox("- Use E Anti Gapcloser BETA", "eGap");
             MiscMenu.AddGroupLabel("Skin Changer");
             
             var skinList = Mario_s_Lib.DataBases.Skins.SkinsDB.FirstOrDefault(list => list.Champ == Player.Instance.Hero);
