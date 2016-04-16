@@ -55,7 +55,7 @@ namespace RoninElise
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             ComboMenu.CreateCheckBox("Combo Fights", "1Combo");
             ComboMenu.AddSeparator(10);
-            ComboMenu.CreateCheckBox("Gank Combo", "2Combo");
+            ComboMenu.CreateCheckBox("Gank Combo", "2Combo", false);
             ComboMenu.AddSeparator(10);
             ComboMenu.AddLabel("Human Settings");
             ComboMenu.CreateCheckBox(" - Use Q", "qUse");
