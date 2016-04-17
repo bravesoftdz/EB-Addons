@@ -1,0 +1,2 @@
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\obj\Debug\RoninNauti.csprojResolveAssemblyReference.cache
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Debug\RoninNauti.exe.config
