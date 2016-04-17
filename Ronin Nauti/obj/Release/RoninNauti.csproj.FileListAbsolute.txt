@@ -1,0 +1,14 @@
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\RoninNauti.exe.config
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\RoninNauti.exe
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\RoninNauti.pdb
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\EloBuddy.dll
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\EloBuddy.Sandbox.dll
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\EloBuddy.SDK.dll
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\Mario`s Lib.dll
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\Newtonsoft.Json.dll
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\SharpDX.Direct3D9.dll
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\SharpDX.dll
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\bin\Release\SharpDX.XInput.dll
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\obj\Release\RoninNauti.csprojResolveAssemblyReference.cache
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\obj\Release\RoninNauti.exe
+D:\Tommi\Documents\My\Deve\Ronin Nauti\Ronin Nauti\obj\Release\RoninNauti.pdb

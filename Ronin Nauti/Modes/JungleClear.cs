@@ -29,25 +29,25 @@ namespace RoninNauti.Modes
         }
         public static void Execute()
         {
-            Orbwalker.ForcedTarget = null;
+            
 
             var source = EntityManager.MinionsAndMonsters.GetJungleMonsters(_Player.ServerPosition, Q.Range).OrderByDescending(a => a.MaxHealth).FirstOrDefault();
 
-            if (source == null) return;
+           
 
-            if (Q.IsReady() && JungleClearMenu.GetCheckBoxValue("qUse") && source.Distance(_Player) <= Q.Range)
+            if (Q.IsReady() && JungleClearMenu.GetCheckBoxValue("qUse"))
             {
                 Q.Cast(source);
                 return;
             }
 
-            if (W.IsReady() && JungleClearMenu.GetCheckBoxValue("wUse") && source.Distance(_Player) < _Player.GetAutoAttackRange(source))
+            if (W.IsReady() && JungleClearMenu.GetCheckBoxValue("wUse"))
             {
                 W.Cast();
                 return;
 
             }
-            if (E.IsReady() && JungleClearMenu.GetCheckBoxValue("eUse") && source.Distance(_Player) < _Player.GetAutoAttackRange(source))
+            if (E.IsReady() && JungleClearMenu.GetCheckBoxValue("eUse"))
             {
                 E.Cast();
                 return;
