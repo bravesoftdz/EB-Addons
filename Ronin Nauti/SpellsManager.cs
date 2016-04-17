@@ -38,10 +38,10 @@ namespace RoninNauti
         /// </summary>
         public static void InitializeSpells()
         {
-            Q = new Spell.Skillshot(SpellSlot.Q, 1100, SkillShotType.Linear);
-            W = new Spell.Active(SpellSlot.W);
-            E = new Spell.Active(SpellSlot.E, (uint)ObjectManager.Player.Spellbook.GetSpell(SpellSlot.E).SData.CastRange);
-            R = new Spell.Targeted(SpellSlot.R, (uint)ObjectManager.Player.Spellbook.GetSpell(SpellSlot.R).SData.CastRange);
+            Q = new Spell.Skillshot(SpellSlot.Q, 950, SkillShotType.Linear);
+            W = new Spell.Active(SpellSlot.W, 350);
+            E = new Spell.Active(SpellSlot.E, 600);
+            R = new Spell.Targeted(SpellSlot.R, 825);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
