@@ -19,29 +19,10 @@ namespace RoninTune
         public const string LastHitMenuID = "lasthitmenuid";
         public const string JungleClearMenuID = "jungleclearmenuid";
         public const string KillStealMenuID = "killstealmenuid";
+        public const string ItemMenuID = "itemmenuid";
         public const string DrawingsMenuID = "drawingsmenuid";
         public const string MiscMenuID = "miscmenuid";
         public static Menu FirstMenu;
-
-        public static bool SmiteToggle
-        {
-            get { return _smiteToggle.CurrentValue; }
-        }
-
-        public static bool SmiteEnemies
-        {
-            get { return _smiteEnemies.CurrentValue; }
-        }
-
-        public static bool SmiteCombo
-        {
-            get { return _smiteCombo.CurrentValue; }
-        }
-
-        public static int RedSmitePercent
-        {
-            get { return _redSmitePercent.CurrentValue; }
-        }
         // --------------------------------------------------------------COMBO LOGICS-------------------------------------------------------------- //
         //public static readonly string[] AvailableModes =
         //{
@@ -73,12 +54,9 @@ namespace RoninTune
         public static Menu LasthitMenu;
         public static Menu JungleClearMenu;
         public static Menu KillStealMenu;
+        public static Menu ItemMenu;
         public static Menu DrawingsMenu;
         public static Menu MiscMenu;
-        public static readonly KeyBind _smiteEnemies;
-        public static readonly KeyBind _smiteCombo;
-        private static readonly KeyBind _smiteToggle;
-        private static readonly Slider _redSmitePercent;
         public static ColorSlide QColorSlide;
         public static ColorSlide WColorSlide;
         public static ColorSlide EColorSlide;
@@ -95,6 +73,7 @@ namespace RoninTune
             //LasthitMenu = FirstMenu.AddSubMenu("♠ LastHit", LastHitMenuID);
             JungleClearMenu = FirstMenu.AddSubMenu("♠ JungleClear", JungleClearMenuID);
             KillStealMenu = FirstMenu.AddSubMenu("♠ KillSteal", KillStealMenuID);
+            ItemMenu = FirstMenu.AddSubMenu("♠ Items", ItemMenuID);
             MiscMenu = FirstMenu.AddSubMenu("♠ Misc", MiscMenuID);
             DrawingsMenu = FirstMenu.AddSubMenu("♠ Drawings", DrawingsMenuID);
  
@@ -129,7 +108,6 @@ namespace RoninTune
             HarassMenu.AddGroupLabel("HarassMenu");
             HarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             HarassMenu.CreateCheckBox(" - Use Q", "qUse", true);
-            HarassMenu.CreateCheckBox(" - Use W", "wUse");
             HarassMenu.CreateCheckBox(" - Use E", "eUse");
             HarassMenu.AddGroupLabel("Settings");
             HarassMenu.CreateSlider("Mana must be higher than [{0}%] to use Harass spells", "manaSlider", 30);
@@ -166,10 +144,11 @@ namespace RoninTune
             JungleClearMenu.AddGroupLabel("JungleClear");
             JungleClearMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             JungleClearMenu.CreateCheckBox(" - Use Q", "qUse");
-            JungleClearMenu.CreateCheckBox(" - Use W", "wUse", false);
+            JungleClearMenu.CreateCheckBox(" - Use W", "wUse");
             JungleClearMenu.CreateCheckBox(" - Use E", "eUse");
+            JungleClearMenu.CreateCheckBox(" - Use Smite ", "jgSmite", false);
             JungleClearMenu.AddGroupLabel("Settings");
-            JungleClearMenu.CreateSlider("Mana must be higher than [{0}%] to use JungleClear spells", "manaSlider", 30);
+            JungleClearMenu.CreateSlider("Mana must be higher than [{0}%] to use JungleClear spells", "manaSlider", 20);
             JungleClearMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             JungleClearMenu.AddSeparator();
 
@@ -178,16 +157,21 @@ namespace RoninTune
             KillStealMenu.CreateCheckBox(" - Use Q", "qUse", true);
             KillStealMenu.CreateCheckBox(" - Use E", "eUse", true);
             KillStealMenu.CreateCheckBox(" - Use R", "rUse", false);
-            KillStealMenu.Add("sm", new CheckBox("Use Smite to killsteal"));
+            KillStealMenu.CreateCheckBox(" - Use Smite KS Logic 1", "smiteUse", false);
+            KillStealMenu.CreateCheckBox(" - Use Smite KS Logic 2", "smite2Use", true);
             KillStealMenu.AddGroupLabel("Settings");
-            KillStealMenu.CreateSlider("Mana must be higher than [{0}%] to use Killsteal spells", "manaSlider", 30);
+            KillStealMenu.CreateSlider("Mana must be higher than [{0}%] to use Killsteal spells", "manaSlider", 10);
             KillStealMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             KillStealMenu.AddSeparator();
 
-            //MiscMenu.AddLabel("Ignite");
-            //MiscMenu.Add("ig", new CheckBox("Use Ignite"));
+            ItemMenu.AddGroupLabel("Items");
+            ItemMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
 
-            //MiscMenu.AddLabel("Smite");
+            ItemMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            ItemMenu.AddSeparator();
+
+            //MiscMenu.AddLabel("Smite CAN BE BUGGY");
+            //MiscMenu.CreateCheckBox("- Dragon Steal OP", "jgmDragonSteal");
             //MiscMenu.Add("smcb", new CheckBox("Use Smite in Combo"));
             //if (Game.MapId == GameMapId.SummonersRift)
             //{

@@ -77,6 +77,8 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoSmite.cs" />
+    <Compile Include="Damage.cs" />
     <Compile Include="DamageIndicator.cs" />
     <Compile Include="DrawingsManager.cs" />
     <Compile Include="Evade\Collision.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Evade\SpellDatabase.cs" />
     <Compile Include="Evade\Utils.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Items.cs" />
     <Compile Include="Menus.cs" />
     <Compile Include="Modes\AutoHarass.cs" />
     <Compile Include="Modes\Combo.cs" />
@@ -101,11 +104,13 @@
     <Compile Include="Modes\LaneClear.cs" />
     <Compile Include="Modes\LastHit.cs" />
     <Compile Include="Modes\ModeManager.cs" />
-    <Compile Include="Modes\_E.cs" />
-    <Compile Include="Modes\_E_Advanced.cs" />
+    <Compile Include="Modes\_W.cs" />
+    <Compile Include="Modes\_W_Advanced.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmiteManager.cs" />
     <Compile Include="SpellsManager.cs" />
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

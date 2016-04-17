@@ -32,7 +32,12 @@ namespace RoninTune
             _W_Advance.Initialize();
             ModeManager.InitializeModes();
             DrawingsManager.InitializeDrawings();
+            AutoSmite.Init();
             
+
+
+
+
         }
     }
 }

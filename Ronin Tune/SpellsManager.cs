@@ -27,7 +27,7 @@ namespace RoninTune
         public static Spell.Targeted R1;
         public static Spell.Targeted Smite { get; private set; }
         public static Spell.Skillshot Flash { get; private set; }
-        public static Spell.Targeted ignite { get; private set; }
+        public static Spell.Targeted Ignite { get; private set; }
 
         /// <summary>
         /// It sets the values to the spells
@@ -43,9 +43,13 @@ namespace RoninTune
             var slot = ObjectManager.Player.GetSpellSlotFromName("summonerdot");
             if (slot != SpellSlot.Unknown)
             {
-                ignite = new Spell.Targeted(slot, 600);
+                Ignite = new Spell.Targeted(slot, 600);
             }
-
+            slot = Player.Instance.GetSpellSlotFromName("smite");
+            if (slot != SpellSlot.Unknown)
+            {
+                Smite = new Spell.Targeted(slot, 500);
+            }
             //Q = new Spell.Targeted(SpellSlot.Q, 350);
             //W = new Spell.Active(SpellSlot.W, 200);
             //E = new Spell.Active(SpellSlot.E, 300);
@@ -54,9 +58,79 @@ namespace RoninTune
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
+        
         public static bool HasSmite()
         {
             return Smite != null && Smite.IsLearned;
+        }
+        public static bool SmiteIsReady
+        {
+            get
+            {
+                return Smite != null && Smite.IsReady();
+            }
+        }
+        public static bool IsInSmiteRange(this Obj_AI_Base target)
+        {
+            return target.IsValidTarget(Smite.Range + Util.MyHero.BoundingRadius + target.BoundingRadius);
+        }
+        public static SpellSlot SpellSlotFromName(this AIHeroClient hero, string name)
+        {
+            foreach (var s in hero.Spellbook.Spells.Where(s => s.Name.ToLower().Contains(name.ToLower())))
+            {
+                return s.Slot;
+            }
+            return SpellSlot.Unknown;
+        }
+        public static bool IsDragon(this Obj_AI_Minion minion)
+        {
+            return minion.IsValidTarget() && (minion.Name.ToLower().Contains("baron") || minion.Name.ToLower().Contains("dragon"));
+        }
+        public static float SmiteDamage(this Obj_AI_Base target)
+        {
+            if (target.IsValidTarget() && SmiteIsReady)
+            {
+                if (target is AIHeroClient)
+                {
+                    if (CanUseSmiteOnHeroes)
+                    {
+                        return Util.MyHero.GetSummonerSpellDamage(target, DamageLibrary.SummonerSpells.Smite);
+                    }
+                }
+                else
+                {
+                    var level = Util.MyHero.Level;
+                    return (new[] { 20 * level + 370, 30 * level + 330, 40 * level + 240, 50 * level + 100 }).Max();
+                }
+            }
+            return 0;
+        }
+        public static bool CanUseSmiteOnHeroes
+        {
+            get
+            {
+                if (SmiteIsReady)
+                {
+                    var name = Smite.Slot.GetSpellDataInst().SData.Name.ToLower();
+                    if (name.Contains("smiteduel") || name.Contains("smiteplayerganker"))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        public static bool IsReady(this SpellSlot slot)
+        {
+            return slot.GetSpellDataInst().IsReady;
+        }
+        public static bool IsFirstSpell(this SpellSlot slot)
+        {
+            return slot.GetSpellDataInst().SData.Name.ToLower().Contains("one");
+        }
+        public static SpellDataInst GetSpellDataInst(this SpellSlot slot)
+        {
+            return Util.MyHero.Spellbook.GetSpell(slot);
         }
         #region Damages
 
