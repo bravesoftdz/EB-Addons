@@ -28,8 +28,11 @@ namespace RoninTune
             Chat.Print("Welcome to the Ronin´s BETA ;)");
             SpellsManager.InitializeSpells();
             Menus.CreateMenu();
+            _W.Initialize();
+            _W_Advance.Initialize();
             ModeManager.InitializeModes();
             DrawingsManager.InitializeDrawings();
+            
         }
     }
 }

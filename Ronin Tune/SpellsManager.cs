@@ -19,20 +19,15 @@ namespace RoninTune
 {
     public static class SpellsManager
     {
-        /*
-        Targeted spells are like Katarina`s Q
-        Active spells are like Katarina`s W
-        Skillshots are like Ezreal`s Q
-        Circular Skillshots are like Lux`s E and Tristana`s W
-        Cone Skillshots are like Annie`s W and ChoGath`s W
-        */
 
-        //Remenber of putting the correct type of the spell here
         public static Spell.Skillshot Q;
         public static Spell.Active W;
         public static Spell.Targeted E;
         public static Spell.Active R;
         public static Spell.Targeted R1;
+        public static Spell.Targeted Smite { get; private set; }
+        public static Spell.Skillshot Flash { get; private set; }
+        public static Spell.Targeted ignite { get; private set; }
 
         /// <summary>
         /// It sets the values to the spells
@@ -44,6 +39,12 @@ namespace RoninTune
             E = new Spell.Targeted(SpellSlot.E, 425);
             R = new Spell.Active(SpellSlot.R, 2500);
             R1 = new Spell.Targeted(SpellSlot.R, R.Range);
+            //SMITE IGNITE
+            var slot = ObjectManager.Player.GetSpellSlotFromName("summonerdot");
+            if (slot != SpellSlot.Unknown)
+            {
+                ignite = new Spell.Targeted(slot, 600);
+            }
 
             //Q = new Spell.Targeted(SpellSlot.Q, 350);
             //W = new Spell.Active(SpellSlot.W, 200);
@@ -53,7 +54,10 @@ namespace RoninTune
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;
         }
-
+        public static bool HasSmite()
+        {
+            return Smite != null && Smite.IsLearned;
+        }
         #region Damages
 
         /// <summary>

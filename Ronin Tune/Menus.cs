@@ -23,7 +23,26 @@ namespace RoninTune
         public const string MiscMenuID = "miscmenuid";
         public static Menu FirstMenu;
 
-      // --------------------------------------------------------------COMBO LOGICS-------------------------------------------------------------- //
+        public static bool SmiteToggle
+        {
+            get { return _smiteToggle.CurrentValue; }
+        }
+
+        public static bool SmiteEnemies
+        {
+            get { return _smiteEnemies.CurrentValue; }
+        }
+
+        public static bool SmiteCombo
+        {
+            get { return _smiteCombo.CurrentValue; }
+        }
+
+        public static int RedSmitePercent
+        {
+            get { return _redSmitePercent.CurrentValue; }
+        }
+        // --------------------------------------------------------------COMBO LOGICS-------------------------------------------------------------- //
         //public static readonly string[] AvailableModes =
         //{
         //        "Combo R - W - E - Q",
@@ -56,7 +75,10 @@ namespace RoninTune
         public static Menu KillStealMenu;
         public static Menu DrawingsMenu;
         public static Menu MiscMenu;
-
+        public static readonly KeyBind _smiteEnemies;
+        public static readonly KeyBind _smiteCombo;
+        private static readonly KeyBind _smiteToggle;
+        private static readonly Slider _redSmitePercent;
         public static ColorSlide QColorSlide;
         public static ColorSlide WColorSlide;
         public static ColorSlide EColorSlide;
@@ -88,13 +110,12 @@ namespace RoninTune
             ComboMenu.CreateCheckBox("Normal", "cOne", false);
             ComboMenu.AddGroupLabel("Combo R - W - E - Q");
             ComboMenu.AddSeparator(15);
-            ComboMenu.CreateCheckBox("Combo Two", "cTwo", true);
+            ComboMenu.CreateCheckBox("Combo Two", "cTwo", false);
             ComboMenu.AddGroupLabel("Combo R - E - W - Q");
             ComboMenu.AddSeparator(15);
-            ComboMenu.CreateCheckBox("Combo Three", "cThree", false);
+            ComboMenu.CreateCheckBox("Combo Three", "cThree", true);
             ComboMenu.AddGroupLabel("Combo R - Q - E");
             ComboMenu.AddSeparator(15);
-            ComboMenu.AddGroupLabel("W Logic coming soon!");
             //ComboMenu.CreateCheckBox("Gank Combo", "gThree");
             //ComboMenu.AddSeparator(15);
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
@@ -157,10 +178,32 @@ namespace RoninTune
             KillStealMenu.CreateCheckBox(" - Use Q", "qUse", true);
             KillStealMenu.CreateCheckBox(" - Use E", "eUse", true);
             KillStealMenu.CreateCheckBox(" - Use R", "rUse", false);
+            KillStealMenu.Add("sm", new CheckBox("Use Smite to killsteal"));
             KillStealMenu.AddGroupLabel("Settings");
             KillStealMenu.CreateSlider("Mana must be higher than [{0}%] to use Killsteal spells", "manaSlider", 30);
             KillStealMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             KillStealMenu.AddSeparator();
+
+            //MiscMenu.AddLabel("Ignite");
+            //MiscMenu.Add("ig", new CheckBox("Use Ignite"));
+
+            //MiscMenu.AddLabel("Smite");
+            //MiscMenu.Add("smcb", new CheckBox("Use Smite in Combo"));
+            //if (Game.MapId == GameMapId.SummonersRift)
+            //{
+            //    MiscMenu.Add("smjc", new CheckBox("Use smite to junglesteal"));
+            //    MiscMenu.Add("Baron", new CheckBox("Jungsteal Baron"));
+            //    MiscMenu.Add("Dragon", new CheckBox("Jungsteal Dragon"));
+            //    MiscMenu.Add("Herald", new CheckBox("Jungsteal Herald"));
+            //    MiscMenu.Add("Red", new CheckBox("Jungsteal Red"));
+            //    MiscMenu.Add("Blue", new CheckBox("Jungsteal Blue"));
+            //    MiscMenu.Add("Razorbeak", new CheckBox("Jungsteal Crimson Raptor", false));
+            //    MiscMenu.Add("Krug", new CheckBox("Jungsteal Ancient Krug", false));
+            //    MiscMenu.Add("Murkwolf", new CheckBox("Jungsteal Greater Murk Wolf", false));
+            //    MiscMenu.Add("Gromp", new CheckBox("Jungsteal Gromp", false));
+            //    MiscMenu.Add("Crab", new CheckBox("Jungsteal Crap"));
+            //}
+
 
             MiscMenu.AddGroupLabel("Skin Changer");
             
@@ -174,14 +217,10 @@ namespace RoninTune
                 };
             }
 
-            MiscMenu.AddGroupLabel("Misc...");
-            MiscMenu.AddGroupLabel("Auto Level UP");
-            MiscMenu.CreateCheckBox("Activate Auto Leveler", "activateAutoLVL");
-            MiscMenu.AddLabel("The auto leveler will always focus R than the rest of the spells");
-            MiscMenu.CreateComboBox("1st Spell to focus", "firstFocus", new List<string> {"Q", "W", "E"});
-            MiscMenu.CreateComboBox("2nd Spell to focus", "secondFocus", new List<string> {"Q", "W", "E"}, 1);
-            MiscMenu.CreateComboBox("3rd Spell to focus", "thirdFocus", new List<string> {"Q", "W", "E"}, 2);
-            MiscMenu.CreateSlider("Delay slider", "delaySlider", 200, 150, 500);
+         
+            MiscMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            MiscMenu.CreateCheckBox("- Use OP W Logic", "wLogic");
+            MiscMenu.AddSeparator(10);
 
             DrawingsMenu.AddGroupLabel("Draw Settings");
             DrawingsMenu.CreateCheckBox(" - Draw Spell`s range only if they are ready.", "readyDraw");
@@ -200,6 +239,12 @@ namespace RoninTune
             RColorSlide = new ColorSlide(DrawingsMenu, "rColor", Color.DeepPink, "R Color:");
             DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen, "DamageIndicator Color:");
             DrawingsMenu.AddSeparator();
+            
         }
+        public static bool BlockSpells
+        {
+            get { return MiscMenu.GetCheckBoxValue("wLogic"); }
+        }
+
     }
-}
+    }

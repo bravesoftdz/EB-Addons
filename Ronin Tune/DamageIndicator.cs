@@ -51,6 +51,7 @@ namespace RoninTune
                 });
         }
 
+
         private static void Drawing_OnEndScene(EventArgs args)
         {
             foreach (
