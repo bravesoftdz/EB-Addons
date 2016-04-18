@@ -30,7 +30,7 @@ namespace RoninSkarner
         //Remenber of putting the correct type of the spell here
         public static Spell.Active Q;
         public static Spell.Active W;
-        public static Spell.Targeted E;
+        public static Spell.Skillshot E;
         public static Spell.Targeted R;
 
         /// <summary>
@@ -39,8 +39,8 @@ namespace RoninSkarner
         public static void InitializeSpells()
         {
             Q = new Spell.Active(SpellSlot.Q, 350);
-            W = new Spell.Active(SpellSlot.W);
-            E = new Spell.Targeted(SpellSlot.E, 980);
+            W = new Spell.Active(SpellSlot.W, 1);
+            E = new Spell.Skillshot(SpellSlot.E, 980, SkillShotType.Linear);
             R = new Spell.Targeted(SpellSlot.R, 350);
 
             Obj_AI_Base.OnLevelUp += Obj_AI_Base_OnLevelUp;

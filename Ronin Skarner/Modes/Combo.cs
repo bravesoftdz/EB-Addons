@@ -27,20 +27,29 @@ namespace RoninSkarner.Modes
         {
             get { return ObjectManager.Player; }
         }
+        public static readonly AIHeroClient Player = ObjectManager.Player;
         public static void Execute()
         {
             var target = TargetSelector.GetTarget(1500, DamageType.Magical);
             var etarget = TargetSelector.GetTarget(E.Range, DamageType.Magical);
+            var enemiese = EntityManager.Heroes.Enemies.OrderByDescending
+             (a => a.HealthPercent).Where(a => !a.IsMe && a.IsValidTarget() && a.Distance(Player) <= E.Range);
 
             if (ComboMenu.GetCheckBoxValue("eUse") && etarget.IsValidTarget(SpellsManager.E.Range) && E.IsReady())
             {
-                E.Cast(etarget);
+                foreach (var eenemies in enemiese)
+                {
+                    var predE = E.GetPrediction(eenemies);
+                    { 
+                    E.Cast(predE.CastPosition);
+                    }
+                }
             }
             if (ComboMenu.GetCheckBoxValue("qUse") && target.IsValidTarget(SpellsManager.Q.Range) && Q.IsReady())
             {
                 Q.Cast();
             }
-            if (ComboMenu.GetCheckBoxValue("wUse") && W.IsReady())
+            if (ComboMenu.GetCheckBoxValue("wUse") && W.IsReady() && W.IsReady())
             {
                 W.Cast();
             }
