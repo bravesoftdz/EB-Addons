@@ -52,7 +52,8 @@ namespace RoninElise
 
             ComboMenu.AddGroupLabel("Combo");
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
-            ComboMenu.Add("gankc", new KeyBind("Gank Combo", false, KeyBind.BindTypes.HoldActive, 'T'));
+            //ComboMenu.Add("gankc", new KeyBind("Gank Combo", false, KeyBind.BindTypes.HoldActive, 'T'));
+            ComboMenu.CreateKeyBind("Enable/Disable GankCombo", "gankcombokey", 'T', 'Z');
             //Menu.Add("flashq", new KeyBind("FlashQ - Select Target (Hold)", false, KeyBind.BindTypes.HoldActive, 'T'));
             ComboMenu.AddSeparator(10);
             ComboMenu.AddLabel("Human Settings");

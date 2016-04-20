@@ -40,33 +40,12 @@ namespace RoninElise.Modes
                     E2.Cast(target);
                 }
                 if (ComboMenu.GetCheckBoxValue("rUse") && R.IsReady() && E.IsReady() && W.IsReady())
-                    {
+                {
                     R.Cast();
                 }
             }
             else
             { //HUMAN
-                if (ComboMenu.GetCheckBoxValue("eUse") && E.IsReady() && target.IsValidTarget(SpellsManager.E.Range) && E.GetPrediction(target).HitChance >= HitChance.Medium)
-                {
-                    E.Cast(target);
-                }
-                 if (ComboMenu.GetCheckBoxValue("qUse") && Q.IsReady() && target.IsValidTarget(SpellsManager.Q.Range))
-                {
-                    Q.Cast(target);
-                }
-                if (ComboMenu.GetCheckBoxValue("WUse") && W.IsReady() && target.IsValidTarget(W.Range))
-                {
-                    W.Cast(target);
-                }
-                if (ComboMenu.GetCheckBoxValue("rUse") && R.IsReady())
-                {
-                    R.Cast();
-                }
-                }
-
-
-            if(ComboMenu["gankc"].Cast<KeyBind>().CurrentValue)
-            {
                 if (ComboMenu.GetCheckBoxValue("eUse") && E.IsReady() && target.IsValidTarget(SpellsManager.E.Range) && E.GetPrediction(target).HitChance >= HitChance.Medium)
                 {
                     E.Cast(target);
@@ -83,25 +62,52 @@ namespace RoninElise.Modes
                 {
                     R.Cast();
                 }
-                if (ComboMenu.GetCheckBoxValue("q2Use") && Q2.IsReady() && target.IsValidTarget(SpellsManager.Q2.Range))
-                {
-                    Q2.Cast(target);
-                }
-                if (ComboMenu.GetCheckBoxValue("w2Use") && W2.IsReady())
-                {
-                    W2.Cast();
-                }
-                if (ComboMenu.GetCheckBoxValue("e2Use") && E2.IsReady() && target.IsValidTarget(E2.Range))
-                {
-                    E2.Cast(target);
-                }
-                if (ComboMenu.GetCheckBoxValue("rUse") && R.IsReady())
-                {
-                    R.Cast();
-                }
             }
 
 
+                    if (ComboMenu.GetKeyBindValue("gankcombokey"))
+                    {
+                        if (ComboMenu.GetCheckBoxValue("eUse") && E.IsReady() && target.IsValidTarget(SpellsManager.E.Range) && E.GetPrediction(target).HitChance >= HitChance.Medium)
+                        {
+                            E.Cast(target);
+                        }
+                        if (ComboMenu.GetCheckBoxValue("qUse") && Q.IsReady() && target.IsValidTarget(SpellsManager.Q.Range))
+                        {
+                            Q.Cast(target);
+                        }
+                        if (ComboMenu.GetCheckBoxValue("WUse") && W.IsReady() && target.IsValidTarget(W.Range))
+                        {
+                            W.Cast(target);
+                        }
+                        if (ComboMenu.GetCheckBoxValue("rUse") && R.IsReady() && Q2.IsReady())
+                         {
+                            R.Cast();
+                         }
+
+                else if (SpellsManager.IsSpider)
+                {
+                    if (ComboMenu.GetCheckBoxValue("q2Use") && Q2.IsReady() && target.IsValidTarget(SpellsManager.Q2.Range))
+                    {
+                        Q2.Cast(target);
+                    }
+                    if (ComboMenu.GetCheckBoxValue("w2Use") && W2.IsReady())
+                    {
+                        W2.Cast();
+                    }
+                    if (ComboMenu.GetCheckBoxValue("e2Use") && E2.IsReady() && target.IsValidTarget(E2.Range))
+                    {
+                        E2.Cast(target);
+                    }
+                    if (ComboMenu.GetCheckBoxValue("rUse") && R.IsReady() && E.IsReady() && W.IsReady())
+                    {
+                        R.Cast();
+                    }
+                }
+
+
+                    }
+                }
+
+            }
         }
-            }
-    }
+
