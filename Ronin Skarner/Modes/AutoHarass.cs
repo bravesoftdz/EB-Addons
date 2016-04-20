@@ -23,17 +23,28 @@ namespace RoninSkarner.Modes
     /// </summary>
     internal class AutoHarass
     {
-        /// <summary>
-        /// Put in here what you want to do when the mode is running
-        /// </summary>
+        public static AIHeroClient _Player
+        {
+            get { return ObjectManager.Player; }
+        }
+        public static readonly AIHeroClient Player = ObjectManager.Player;
         public static void Execute()
         {
-            var target = TargetSelector.GetTarget(1000, DamageType.Mixed);
+            var enemiese = EntityManager.Heroes.Enemies.OrderByDescending
+                       (a => a.HealthPercent).Where(a => !a.IsMe && a.IsValidTarget() && a.Distance(Player) <= E.Range);
+            var target = TargetSelector.GetTarget(1500, DamageType.Magical);
+            var etarget = TargetSelector.GetTarget(E.Range, DamageType.Magical);
 
-            Q.TryToCast(target, AutoHarassMenu);
-            W.TryToCast(target, AutoHarassMenu);
-            E.TryToCast(target, AutoHarassMenu);
-            R.TryToCast(target, AutoHarassMenu);
+            if (AutoHarassMenu.GetCheckBoxValue("eUse") && etarget.IsValidTarget(SpellsManager.E.Range) && E.IsReady() && AutoHarassMenu.GetKeyBindValue("autoHarassKey"))
+            {
+                foreach (var eenemies in enemiese)
+                {
+                    var predE = E.GetPrediction(eenemies);
+                    {
+                        E.Cast(predE.CastPosition);
+                    }
+                }
+            }
         }
     }
 }

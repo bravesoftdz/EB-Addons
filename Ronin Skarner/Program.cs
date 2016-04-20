@@ -25,10 +25,12 @@ namespace RoninSkarner
         {
             //Put the name of the champion here
             if (Player.Instance.ChampionName != "Skarner") return;
-
+            Chat.Print("Welcome to the Ronin´s BETA ;)");
             SpellsManager.InitializeSpells();
             Menus.CreateMenu();
             ModeManager.InitializeModes();
+            _W.Initialize();
+            _W_Advance.Initialize();
             DrawingsManager.InitializeDrawings();
         }
     }

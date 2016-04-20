@@ -45,11 +45,18 @@ namespace RoninSkarner.Modes
                     }
                 }
             }
+
             if (ComboMenu.GetCheckBoxValue("qUse") && target.IsValidTarget(SpellsManager.Q.Range) && Q.IsReady())
             {
                 Q.Cast();
             }
-            if (ComboMenu.GetCheckBoxValue("wUse") && W.IsReady() && W.IsReady())
+
+            if (ComboMenu.GetCheckBoxValue("wUse") && W.IsReady())
+            {
+                W.Cast();
+            }
+
+            if (ComboMenu.GetCheckBoxValue("wrUse") && W.IsReady() && target.IsValidTarget(SpellsManager.W.Range))
             {
                 W.Cast();
             }
@@ -73,10 +80,39 @@ namespace RoninSkarner.Modes
             }
 
 
+            if (ComboMenu["gankc"].Cast<KeyBind>().CurrentValue)
+            {
+
+                if (W.IsReady())
+                {
+                    W.Cast();
+                }
+
+                if (ComboMenu.GetCheckBoxValue("eUse") && etarget.IsValidTarget(SpellsManager.E.Range) && E.IsReady())
+                {
+                    E.Cast(etarget);
+                }
+
+                if (ComboMenu.GetCheckBoxValue("rUse") && target.IsValidTarget(SpellsManager.R.Range) && R.IsReady())
+                {
+                    foreach (var ultenemies in enemies)
+                    {
+                        var useR = ComboMenu["r.ult" + ultenemies.ChampionName].Cast<CheckBox>().CurrentValue;
+                        {
+                            if (useR)
+                                R.Cast(ultenemies);
+                        }
+                    }
+                }
+
+                if (ComboMenu.GetCheckBoxValue("qUse") && target.IsValidTarget(SpellsManager.Q.Range) && Q.IsReady())
+                {
+                    Q.Cast();
+                }
+            }
 
 
 
-
-        }
+            }
     }
 }

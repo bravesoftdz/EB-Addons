@@ -21,7 +21,7 @@ namespace RoninSkarner
     {
         public const string ComboMenuID = "combomenuid";
         public const string HarassMenuID = "harassmenuid";
-        //public const string AutoHarassMenuID = "autoharassmenuid";
+        public const string AutoHarassMenuID = "autoharassmenuid";
         public const string LaneClearMenuID = "laneclearmenuid";
         //public const string LastHitMenuID = "lasthitmenuid";
         public const string JungleClearMenuID = "jungleclearmenuid";
@@ -49,9 +49,13 @@ namespace RoninSkarner
         public static void CreateMenu()
         {
             FirstMenu = MainMenu.AddMenu("Ronin`s " + Player.Instance.ChampionName, Player.Instance.ChampionName.ToLower() + "hue");
+            FirstMenu.AddGroupLabel("Addon by Taazuma / Thanks for using it");
+            FirstMenu.AddLabel("If you found any bugs report it on my Thread");
+            FirstMenu.AddLabel("Have fun with Playing");
+            FirstMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             ComboMenu = FirstMenu.AddSubMenu("• Combo", ComboMenuID);
             HarassMenu = FirstMenu.AddSubMenu("• Harass", HarassMenuID);
-            //AutoHarassMenu = FirstMenu.AddSubMenu("• AutoHarass", AutoHarassMenuID);
+            AutoHarassMenu = FirstMenu.AddSubMenu("• AutoHarass", AutoHarassMenuID);
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear", LaneClearMenuID);
             //LasthitMenu = FirstMenu.AddSubMenu("• LastHit", LastHitMenuID);
             JungleClearMenu = FirstMenu.AddSubMenu("• JungleClear", JungleClearMenuID);
@@ -61,8 +65,11 @@ namespace RoninSkarner
 
             ComboMenu.AddGroupLabel("Combo");
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            ComboMenu.Add("gankc", new KeyBind("Gank Combo", false, KeyBind.BindTypes.HoldActive, 'T'));
             ComboMenu.CreateCheckBox(" - Use Q", "qUse");
-            ComboMenu.CreateCheckBox(" - Use W", "wUse");
+            ComboMenu.AddLabel("W Spells");
+            ComboMenu.CreateCheckBox(" - Use W Always", "wUse", true);
+            ComboMenu.CreateCheckBox(" - Use W Only in Enemy Range", "wrUse", false);
             ComboMenu.CreateCheckBox(" - Use E", "eUse");
             ComboMenu.CreateCheckBox(" - Use R", "rUse");
             ComboMenu.AddLabel("Use ultimate on");
@@ -75,9 +82,18 @@ namespace RoninSkarner
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
 
             HarassMenu.AddGroupLabel("Harass");
+            HarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             HarassMenu.CreateCheckBox(" - Use E", "eUse");
             HarassMenu.AddGroupLabel("Settings");
             HarassMenu.CreateSlider("Mana must be lower than [{0}%] to use Harass spells", "manaSlider", 30);
+            HarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+
+            AutoHarassMenu.AddGroupLabel("AutoHarass");
+            AutoHarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            AutoHarassMenu.CreateCheckBox(" - Use E", "eUse", false);
+            AutoHarassMenu.AddGroupLabel("Settings");
+            AutoHarassMenu.CreateSlider("Mana must be lower than [{0}%] to use Harass spells", "manaSlider", 80);
+            AutoHarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
 
             LaneClearMenu.AddGroupLabel("LaneClear");
             LaneClearMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
@@ -123,7 +139,11 @@ namespace RoninSkarner
             MiscMenu.CreateComboBox("3rd Spell to focus", "thirdFocus", new List<string> {"Q", "W", "E"}, 2);
             MiscMenu.CreateSlider("Delay slider", "delaySlider", 200, 150, 500);
 
-            DrawingsMenu.AddGroupLabel("Setting");
+            MiscMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
+            MiscMenu.CreateCheckBox("- Use OP W Logic ShieldSpell", "wLogic", false);
+            MiscMenu.AddSeparator(10);
+
+            DrawingsMenu.AddGroupLabel("Settings");
             DrawingsMenu.CreateCheckBox(" - Draw Spell`s range only if they are ready.", "readyDraw");
             DrawingsMenu.CreateCheckBox(" - Draw damage indicator.", "damageDraw");
             DrawingsMenu.CreateCheckBox(" - Draw damage indicator percent.", "perDraw");
@@ -139,6 +159,10 @@ namespace RoninSkarner
             EColorSlide = new ColorSlide(DrawingsMenu, "eColor", Color.Orange, "E Color:");
             RColorSlide = new ColorSlide(DrawingsMenu, "rColor", Color.DeepPink, "R Color:");
             DamageIndicatorColorSlide = new ColorSlide(DrawingsMenu, "healthColor", Color.YellowGreen, "DamageIndicator Color:");
+        }
+        public static bool BlockSpells
+        {
+            get { return MiscMenu.GetCheckBoxValue("wLogic"); }
         }
     }
 }

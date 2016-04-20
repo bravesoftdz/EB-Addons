@@ -116,6 +116,15 @@ namespace RoninSkarner
             }
         }
 
+        public static SpellSlot SpellSlotFromName(this AIHeroClient hero, string name)
+        {
+            foreach (var s in hero.Spellbook.Spells.Where(s => s.Name.ToLower().Contains(name.ToLower())))
+            {
+                return s.Slot;
+            }
+            return SpellSlot.Unknown;
+        }
+
         /// <summary>
         /// It will level up the spell using the values of the comboboxes on the menu as a priority
         /// </summary>
