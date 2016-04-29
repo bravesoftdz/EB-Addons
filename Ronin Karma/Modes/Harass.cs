@@ -28,7 +28,7 @@ namespace RoninKarma.Modes
         /// </summary>
         public static void Execute()
         {
-            var target = TargetSelector.GetTarget(1000, DamageType.Mixed);
+            var target = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
 
             Q.TryToCast(target, HarassMenu);
         }
