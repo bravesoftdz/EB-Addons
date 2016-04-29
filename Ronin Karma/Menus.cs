@@ -81,6 +81,9 @@ namespace RoninKarma
             ComboMenu.CreateCheckBox("Combo Four", "combo4", false);
             ComboMenu.AddGroupLabel("Combo Q - R - W - E");
             ComboMenu.AddSeparator(15);
+            ComboMenu.CreateCheckBox("Combo Five", "combo5", false);
+            ComboMenu.AddGroupLabel("Combo W - E - RQ");
+            ComboMenu.AddSeparator(15);
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             ComboMenu.CreateCheckBox(" - Use Q", "qUse");
             ComboMenu.CreateCheckBox(" - Use W", "wUse");

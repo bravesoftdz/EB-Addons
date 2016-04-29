@@ -118,7 +118,26 @@ namespace RoninKarma.Modes
 
             }
 
+            if (ComboMenu.GetCheckBoxValue("combo5"))
+            {
+                if (ComboMenu.GetCheckBoxValue("wUse") && wtarget.IsValidTarget(W.Range) && W.IsReady())
+                {
+                    W.Cast(wtarget);
+                }
 
+                if (ComboMenu.GetCheckBoxValue("eUse") && E.IsReady())
+                {
+                    E.Cast();
+                }
+
+                if (ComboMenu.GetCheckBoxValue("rUse") && R.IsReady() && getPlayer().HealthPercent < comboUseRW && ComboMenu.GetCheckBoxValue("qUse") && Q.IsReady())
+                {
+                    R.Cast();
+                    Q.Cast(qtarget);
+                }
+
+
+            }
 
 
         }
