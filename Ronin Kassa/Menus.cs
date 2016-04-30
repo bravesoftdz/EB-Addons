@@ -75,7 +75,7 @@ namespace RoninKassadin
             ComboMenu.AddLabel("R Spells");
             ComboMenu.CreateCheckBox(" - Use R Always", "rUse", false);
             ComboMenu.CreateCheckBox(" - Use R Only in Enemy Position", "rrUse", true);
-            ComboMenu.Add("MaxR", new Slider("Don't use R if more than Eminies on range :", 2, 1, 5));
+            ComboMenu.Add("MaxR", new Slider("Don't use R if more than Enemy on range :", 2, 1, 5));
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
 
             HarassMenu.AddGroupLabel("Harass");
