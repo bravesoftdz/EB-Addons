@@ -28,9 +28,27 @@ namespace RoninKarma.Modes
         /// </summary>
         public static void Execute()
         {
-            var target = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
+            var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
+            var wtarget = TargetSelector.GetTarget(W.Range, DamageType.Magical);
+            var etarget = TargetSelector.GetTarget(E.Range, DamageType.Magical);
 
-            Q.TryToCast(target, AutoHarassMenu);
+        //    if (AutoHarassMenu.GetCheckBoxValue("qUse") && AutoHarassMenu.GetKeyBindValue("autoHarassKey"))
+        //{ 
+        //  Q.TryToCast(target, AutoHarassMenu);
+        //}
+
+            if (AutoHarassMenu.GetCheckBoxValue("rqUse") && AutoHarassMenu.GetKeyBindValue("autoHarassKey"))
+            {
+                    R.Cast();
+                    Q.Cast(qtarget);
+            }
+
+            if (AutoHarassMenu.GetCheckBoxValue("qUse") && AutoHarassMenu.GetKeyBindValue("autoHarassKey"))
+                {
+                    Q.Cast(qtarget);
+                }
+
+
         }
     }
 }

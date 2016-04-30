@@ -28,8 +28,8 @@ namespace RoninKarma.Modes
         public static void Execute()
         {
             var qtarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
-            var wtarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
-            var etarget = TargetSelector.GetTarget(Q.Range, DamageType.Magical);
+            var wtarget = TargetSelector.GetTarget(W.Range, DamageType.Magical);
+            var etarget = TargetSelector.GetTarget(E.Range, DamageType.Magical);
 
             if (ComboMenu.GetCheckBoxValue("combo1"))
             {
@@ -137,6 +137,26 @@ namespace RoninKarma.Modes
                 }
 
 
+            }
+
+            if (ComboMenu.GetCheckBoxValue("combo6"))
+            {
+
+                if (ComboMenu.GetCheckBoxValue("rUse") && R.IsReady() && getPlayer().HealthPercent < comboUseRW && ComboMenu.GetCheckBoxValue("qUse") && Q.IsReady())
+                {
+                    R.Cast();
+                    Q.Cast(qtarget);
+                }
+
+                if (ComboMenu.GetCheckBoxValue("wUse") && wtarget.IsValidTarget(W.Range) && W.IsReady())
+                {
+                    W.Cast(wtarget);
+                }
+
+                if (ComboMenu.GetCheckBoxValue("eUse") && E.IsReady())
+                {
+                    E.Cast();
+                }
             }
 
 

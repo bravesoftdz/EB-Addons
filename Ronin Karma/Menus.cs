@@ -84,6 +84,9 @@ namespace RoninKarma
             ComboMenu.CreateCheckBox("Combo Five", "combo5", false);
             ComboMenu.AddGroupLabel("Combo W - E - RQ");
             ComboMenu.AddSeparator(15);
+            ComboMenu.CreateCheckBox("Combo Six", "combo6", false);
+            ComboMenu.AddGroupLabel("Combo RQ - W - E");
+            ComboMenu.AddSeparator(15);
             ComboMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             ComboMenu.CreateCheckBox(" - Use Q", "qUse");
             ComboMenu.CreateCheckBox(" - Use W", "wUse");
@@ -102,6 +105,7 @@ namespace RoninKarma
             AutoHarassMenu.AddGroupLabel("AutoHarass");
             AutoHarassMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             AutoHarassMenu.CreateCheckBox(" - Use Q", "qUse");
+            AutoHarassMenu.CreateCheckBox(" - Use RQ", "qrUse", false);
             AutoHarassMenu.AddGroupLabel("Settings");
             AutoHarassMenu.CreateKeyBind("Enable/Disable AutoHrass", "autoHarassKey", 'Z', 'U');
             AutoHarassMenu.CreateSlider("Mana must be lower than [{0}%] to use AutoHarass spells", "manaSlider", 80);
@@ -111,7 +115,7 @@ namespace RoninKarma
             LaneClearMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
             LaneClearMenu.CreateCheckBox(" - Use Q", "qUse");
             LaneClearMenu.AddGroupLabel("Settings");
-            LaneClearMenu.CreateSlider("Mana must be lower than [{0}%] to use LaneClear spells", "manaSlider", 30);
+            LaneClearMenu.CreateSlider("Mana must be lower than [{0}%] to use LaneClear spells", "manaSlider", 40);
             LaneClearMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
 
             //LasthitMenu.AddGroupLabel("Lasthit");
@@ -126,7 +130,7 @@ namespace RoninKarma
             JungleClearMenu.CreateCheckBox(" - Use E", "eUse");
             JungleClearMenu.CreateCheckBox(" - Use R", "rUse");
             JungleClearMenu.AddGroupLabel("Settings");
-            JungleClearMenu.CreateSlider("Mana must be lower than [{0}%] to use JungleClear spells", "manaSlider", 30);
+            JungleClearMenu.CreateSlider("Mana must be lower than [{0}%] to use JungleClear spells", "manaSlider", 20);
             JungleClearMenu.AddLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬");
 
             MiscMenu.AddGroupLabel("Skin Changer");
