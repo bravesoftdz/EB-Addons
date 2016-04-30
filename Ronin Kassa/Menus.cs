@@ -23,7 +23,7 @@ namespace RoninKassadin
         public const string HarassMenuID = "harassmenuid";
         public const string AutoHarassMenuID = "autoharassmenuid";
         public const string LaneClearMenuID = "laneclearmenuid";
-        //public const string LastHitMenuID = "lasthitmenuid";
+        public const string LastHitMenuID = "lasthitmenuid";
         public const string JungleClearMenuID = "jungleclearmenuid";
         public const string KillStealMenuID = "killstealmenuid";
         public const string DrawingsMenuID = "drawingsmenuid";
@@ -57,7 +57,7 @@ namespace RoninKassadin
             HarassMenu = FirstMenu.AddSubMenu("• Harass", HarassMenuID);
             AutoHarassMenu = FirstMenu.AddSubMenu("• AutoHarass", AutoHarassMenuID);
             LaneClearMenu = FirstMenu.AddSubMenu("• LaneClear", LaneClearMenuID);
-            //LasthitMenu = FirstMenu.AddSubMenu("• LastHit", LastHitMenuID);
+            LasthitMenu = FirstMenu.AddSubMenu("• LastHit", LastHitMenuID);
             JungleClearMenu = FirstMenu.AddSubMenu("• JungleClear", JungleClearMenuID);
             KillStealMenu = FirstMenu.AddSubMenu("• KillSteal", KillStealMenuID);
             MiscMenu = FirstMenu.AddSubMenu("• Misc", MiscMenuID);

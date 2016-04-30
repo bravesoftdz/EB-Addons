@@ -29,7 +29,7 @@ namespace RoninKassadin.Modes
         public static void Execute()
         {
             var qtarget = TargetSelector.GetTarget(650, DamageType.Magical);
-            var wtarget = TargetSelector.GetTarget(1, DamageType.Magical);
+            var wtarget = TargetSelector.GetTarget(5, DamageType.Magical);
             var etarget = TargetSelector.GetTarget(400, DamageType.Magical);
             var rtarget = TargetSelector.GetTarget(500, DamageType.Magical);
             var rmax = EntityManager.Heroes.Enemies.Where(t => t.IsInRange(Player.Instance.Position, R.Range) && !t.IsDead && t.IsValid && !t.IsInvulnerable).Count();
@@ -46,7 +46,7 @@ namespace RoninKassadin.Modes
 
             if (ComboMenu.GetCheckBoxValue("wrUse") && W.IsReady() && wtarget.IsValidTarget(W.Range))
             {
-                W.Cast(wtarget);
+                W.Cast();
             }
 
             if (E.IsReady() && ComboMenu.GetCheckBoxValue("eUse"))
